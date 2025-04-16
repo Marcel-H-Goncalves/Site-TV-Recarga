@@ -1,0 +1,391 @@
+body{
+    background-color: #000000;
+}
+
+/* Cabeçalho com nome do site */
+.site-header {
+    position: relative;  /* Necessário para que o texto fique em cima da imagem */
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);  /* Cor de fundo semitransparente para melhorar a legibilidade do texto */
+    z-index: 1;  /* Garante que o conteúdo fique acima da imagem de fundo */
+    
+}
+
+/* Pseudo-elemento para a imagem de fundo com opacidade controlada */
+.site-header::before {
+    content: "";  /* Necessário para criar um pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Imagens/fundo.jpg'); /* Caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o cabeçalho */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;  /* Ajusta a opacidade da imagem de fundo */
+    z-index: -1;  /* Garante que a imagem fique abaixo do texto */
+    
+}
+
+/* Título do cabeçalho (h1) */
+.site-header h1 {
+    position: relative;
+    font-size: 80px; /* Tamanho do texto */
+    z-index: 2; /* Garante que o texto fique acima da imagem de fundo */
+    margin: 0; /* Remove margens extras */
+	-webkit-text-stroke: 2px #000000; /* Contorno de 1px de espessura e vermelho */
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-optical-sizing: auto;
+    background-image: linear-gradient(to bottom, #fee500,#ff0000); /* Degradê do vermelho para o laranja */
+    background-clip: text; /* Aplica o gradiente ao texto */
+    color: transparent; /* Torna a cor do texto transparente para ver o gradiente */
+    -webkit-background-clip: text; /* Para compatibilidade com Webkit (Safari e Chrome) */
+    letter-spacing: 1px;
+    
+}	
+
+
+
+
+/* Menu de Navegação */
+.navbar {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #d2d2d232;
+    margin-top: 0px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 10px;
+    margin-top: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0 50px;
+}
+
+.navbar a {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    color: rgb(255, 149, 0);
+    
+    font-size: 1.2em;
+}
+
+/* Carrossel de Imagens */
+.swiper {
+    border-radius: 40px;
+    background-color: #d2d2d232;
+    padding: 30px;
+    width: 90%;
+    height: 100%;
+    perspective: 1000px; /* Adicionando perspectiva 3D */
+}
+
+.swiper-slide img {
+	border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease, opacity 1s ease; /* Suaviza a transição de escala e opacidade */
+	transform-origin: center; /*Ponto de origem da rotação*/
+}
+
+/* Imagem ativa (central) */
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg); /* Imagem ativa sem rotação */
+	transition: transform 1s ease, opacity 0.3s ease;
+}
+
+/* Imagens anteriores e seguintes (adjacentes) */
+.swiper-slide-next{
+    opacity: 0.5;
+    transform: scale(0.8) rotateY(20deg); /* Imagens adjacentes com rotação */
+	transition: transform 1s ease, opacity 0.6s ease; /* Suaviza a rotação */
+}
+
+.swiper-slide-prev{
+    opacity: 0.5;
+    transform: scale(0.8) rotateY(-20deg); /* Imagens adjacentes com rotação */
+	transition: transform 1s ease, opacity 0.6s ease; /* Suaviza a rotação */
+}
+
+/* Outras imagens fora de foco (não são as próximas nem anteriores) */
+.swiper-slide {
+    transform: scale(0.3) rotateY(40deg); /* Imagens mais distantes */
+    opacity: 0.3;
+}
+
+
+
+.section{
+	padding: 20px;
+	margin: 20px;
+}
+
+
+/* Vídeos */
+.mediaVideo{
+    color: rgb(251, 244, 187);
+    background-color: #d2d2d232;
+    border-radius: 20px;
+    width: 65%;
+    margin: auto;
+    
+}
+
+video {
+    margin: 20px;
+    height: 500px;
+    width: 280px;
+    
+}
+
+.videos {
+	display: flex;
+    justify-content: center; /* Alinha os itens horizontalmente no centro */
+    gap: 190px; /* Adiciona um espaço entre os vídeos */
+    flex-wrap: wrap; /* Permite que os vídeos se ajustem em várias linhas, se necessário */
+    text-align: center;
+}
+
+.mediaVideo h2 {
+	display: flex;
+	justify-content: center;
+	
+}
+
+
+
+#quem-somos{
+    background-color: #d2d2d232;
+    border-radius: 20px;
+    flex: 1;
+    font-family: "Raleway", sans-serif;
+    color: rgb(251, 244, 187);
+    font-size: 20px;
+    line-height: 30px
+}
+
+
+#mais-informacoes{
+    background-color: #d2d2d232;
+    border-radius: 20px;
+    flex: 1;
+    font-family: "Raleway", sans-serif;
+    color: rgb(251, 244, 187);
+    font-size: 20px;
+    line-height: 30px
+}
+
+.Social{
+    background-color: #d2d2d232;
+}
+
+.contato {
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.back-to-top{
+    float: right;
+    margin: 0px 35px 0px 0px;
+    background-color: #d2d2d232;
+    border-radius:10px;
+    color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 2px black;
+}
+
+/* Botões */
+.button {
+    background-color: #007aff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.contact {
+    width: 100%; /* Garantir que ocupe toda a largura disponível */
+    padding: 80px 0;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    color: rgb(251, 244, 187);
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+    
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.contact-card {
+    background-color: #d2d2d232;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+    width: 320px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.contact-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.whatsapp i {
+    color: #25D366;
+}
+
+.instagram i {
+    color: #E4405F;
+}
+
+.email i {
+    color: #007bff;
+}
+
+.email:hover i {
+    color: #00c3ff;
+}
+.contact-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    color: rgb(251, 244, 187);
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    background: #007bff;
+    color: white;
+}
+
+.contact-card:hover p {
+    color: white;
+}
+
+.contact-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container a {
+    color: rgb(251, 244, 187);
+}
+
+footer{
+    color: aliceblue;
+	text-align: center;
+}
+
+
+/* Responsividade para Tablets e Telas Médias (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .site-header h1 {
+        font-size: 60px;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-card {
+        width: 90%; /* Para as cards de contato ocuparem mais espaço em telas pequenas */
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsividade para Celulares (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .site-header h1 {
+        font-size: 40px;
+    }
+
+    .swiper {
+        padding: 0px;
+        width: 50%;
+        height: 200px;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        width: 82%;
+        
+    }
+
+    .contact-card {
+        width: 90%; /* Para as cards de contato ocuparem mais espaço em telas pequenas */
+        margin-bottom: 20px;
+    }
+
+   
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Responsividade para Dispositivos Muito Pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+    .site-header h1 {
+        font-size: 30px;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contact-card {
+        width: 100%; /* As cards de contato vão ocupar toda a largura disponível */
+    }
+
+    .button {
+        width: 100%; /* Botões ocuparão toda a largura em dispositivos pequenos */
+    }
+}
