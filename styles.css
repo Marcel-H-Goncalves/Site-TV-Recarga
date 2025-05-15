@@ -318,6 +318,10 @@ footer{
         font-size: 60px;
     }
 
+    body p {
+        font-size: 12px;
+    }
+
     .swiper {
         width: 80%;
     }
